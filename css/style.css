@@ -50,7 +50,7 @@ div {
   border-radius: 10px;
   border: none;
   color: white;
-  box-shadow: inset 2px 2px 5px white;
+  /* box-shadow: inset 2px 2px 5px white; */
   cursor: pointer;
 }
 
@@ -82,4 +82,22 @@ main{
     height: 400px;
     padding: .5%;
     border-radius: 10px;
+}
+
+.book .book-cover{
+    width: 70%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid #ccc;
+    border-bottom: 5px solid black;
+    border-left: 10px solid black;
+    border-right: none;
+    margin: 0 15%;
+    position: relative;
+}
+
+.book .book-cover::after{
+    width: 100%;
 }
