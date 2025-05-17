@@ -23,6 +23,11 @@ function getAllBooks(data) {
   data["data"]["books"].forEach((item, index) => {
     const favBtn = document.createElement("i");
     favBtn.className = "fa-regular fa-heart fav-icon";
+
+    const bookCover = document.createElement("div");
+    bookCover.className = "book-cover";
+    bookCover.style.backgroundImage = `url(${item.cover_image})`;
+
     const book = document.createElement("div");
     book.className = "book";
     book.id = item.id;
@@ -33,16 +38,14 @@ function getAllBooks(data) {
                 ? item.title.slice(0, 20) + "..."
                 : item.title
             }</h3>
-            <div class="book-cover" style="background-image:url(${
-              item.cover_image
-            })">
        `;
+    book.append(bookCover);
     book.append(favBtn);
     favBtn.addEventListener("click", () => {
       favBtn.classList.toggle("fa-solid");
       favBtn.classList.toggle("scale");
     });
-    book.addEventListener("click", () => {
+    bookCover.addEventListener("click", () => {
       viewBook(item);
       overlay.classList.toggle("show");
       bookDetails.classList.toggle("show");
