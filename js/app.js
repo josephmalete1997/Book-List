@@ -1,5 +1,6 @@
 import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
+import { viewBook } from "./helper_functions.js";
 const { bookDetails, booksPanel, genrePanel, overlay, closeBtn } = elements;
 
 const genreList = [
@@ -17,8 +18,6 @@ const genreList = [
   { name: "Horror", color: "#dc3545" },
   { name: "Science Fiction", color: "#0dcaf0" },
 ];
-
-
 
 function getAllBooks(data) {
   data["data"]["books"].forEach((item, index) => {
@@ -40,7 +39,7 @@ function getAllBooks(data) {
        `;
     book.append(favBtn);
     book.addEventListener("click", () => {
-    //   viewBook(data);
+      viewBook(item);
       overlay.classList.toggle("show");
       bookDetails.classList.toggle("show");
       document.querySelector(".fa-times").addEventListener("click", () => {
