@@ -14,4 +14,6 @@ const genreList = [
   "Science Fiction",
 ];
 
-export { genreList };
+const favoriteBooks = JSON.parse(localStorage.getItem("favorite" || []));
+
+export { genreList, favoriteBooks };

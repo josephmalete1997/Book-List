@@ -1,6 +1,6 @@
 import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
-import { viewBook, addToFavorite, setFavorite } from "./helper_functions.js";
+import { viewBook, setFavorite } from "./helper_functions.js";
 import { genreList } from "./helper_objects.js";
 const { bookDetails, booksPanel, genrePanel, overlay } = elements;
 
@@ -28,13 +28,12 @@ function getAllBooks(data) {
        `;
     book.append(bookCover);
     book.append(favBtn);
-    setFavorite(favBtn, JSON.parse(localStorage.getItem("favorite")));
 
     favBtn.addEventListener("click", () => {
-      addToFavorite(item);
       favBtn.classList.toggle("fa-solid");
       favBtn.classList.toggle("scale");
     });
+
     bookCover.addEventListener("click", () => {
       viewBook(item);
       overlay.classList.toggle("show");
@@ -44,6 +43,7 @@ function getAllBooks(data) {
       });
     });
 
+    setFavorite(favBtn, item);
     booksPanel.append(book);
   });
 }

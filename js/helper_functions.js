@@ -1,21 +1,58 @@
 import { elements } from "./ui_elements.js";
-const { bookDetails } = elements;
+import { favoriteBooks } from "./helper_objects.js";
+const { bookDetails, FavoriteBooksList, successMessage, favoriteCount } =
+  elements;
 
-function addToFavorite(item) {
-  if (!localStorage.getItem("favorite")) {
-    localStorage.setItem("favorite", JSON.stringify([]));
-  }
-
-  let favArray = JSON.parse(localStorage.getItem("favorite"));
-  if (!favArray.some((favItem) => favItem.id === item.id)) favArray.push(item);
-  localStorage.setItem("favorite", JSON.stringify(favArray));
+function showMessage(message) {
+  successMessage.classList.toggle("show");
+  successMessage.append(message);
+  setTimeout(() => {
+    successMessage.innerHTML = "";
+    successMessage.classList.toggle("show");
+  }, 2000);
 }
 
-function setFavorite(elem, favorite) {
-  favorite.forEach((favItem) => {
-    elem.id === favItem
-      ? elem.classList.add("fa-solid")
-      : elem.classList.add("fa-regular");
+function getFavoriteCount(arr) {
+  favoriteCount.innerHTML = ` (${arr.length})`;
+}
+
+function setFavorite(elem, book) {
+  let favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+  getFavoriteCount(favorites);
+  const elemId = parseInt(elem.id);
+  const index = favorites.findIndex((item) => item.id === elemId);
+
+  if (index !== -1) {
+    elem.classList.add("fa-solid");
+    elem.classList.remove("fa-regular");
+  } else {
+    elem.classList.add("fa-regular");
+    elem.classList.remove("fa-solid");
+  }
+
+  elem.addEventListener("click", () => {
+    favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+    const index = favorites.findIndex((item) => item.id === elemId);
+
+    if (index !== -1) {
+      setTimeout(() => {
+        showMessage("Removed successfully");
+        favorites.splice(index, 1);
+        elem.classList.remove("fa-solid");
+        elem.classList.add("fa-regular");
+        localStorage.setItem("favorite", JSON.stringify(favorites));
+        getFavoriteCount(favorites);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        showMessage("Added successfully");
+        favorites.push(book);
+        elem.classList.remove("fa-regular");
+        elem.classList.add("fa-solid");
+        localStorage.setItem("favorite", JSON.stringify(favorites));
+        getFavoriteCount(favorites);
+      }, 1000);
+    }
   });
 }
 
@@ -45,14 +82,22 @@ function viewBook(item) {
     `;
 }
 
-function populateFavorite(data) {
-  `<div class="favorite-book">
-      <div class="favorite-book-cover"></div>
+function populateFavorite() {
+  if (favoriteBooks) {
+    favoriteBooks.forEach((item) => {
+      const book = document.createElement("div");
+      book.innerHTML = `<div class="favorite-book">
+      <div class="favorite-book-cover" style="backgroundImage: url(${item.cover_image});"></div>
       <div class="favorite-book-text">
-        <h2>Title</h2>
+        <p>${item.title}</p>
         <div><button>Remove</button></div>
       </div>
    </div>`;
+      FavoriteBooksList.append(book);
+    });
+  } else {
+    FavoriteBooksList.innerHTML = "No books found!";
+  }
 }
 
-export { viewBook, populateFavorite, addToFavorite, setFavorite };
+export { viewBook, populateFavorite, setFavorite };
