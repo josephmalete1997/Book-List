@@ -2,3 +2,7 @@
   background: rgb(49, 49, 49);
   color: white;
 }
+
+.header.dark-panel * {
+  color: white;
+}
