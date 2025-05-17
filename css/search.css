@@ -12,8 +12,26 @@
   margin: 1% 2%;
 }
 
-.book-card-image{
+.book-card h3 {
+  color: blue;
+  cursor: pointer;
+}
+
+.search-genre-tag{
+  background: white;
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin: 10px;
+  position: absolute;
+  font-size: 14px;
+}
+
+.book-card h3:hover {
+  text-decoration: underline;
+}
+
+.book-card-image {
   width: 100%;
-  height: 250px;
+  height: 350px;
   border-radius: 10px;
 }

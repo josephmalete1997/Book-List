@@ -24,15 +24,15 @@ function bookMatches(book, pattern) {
 
 searchButton.addEventListener("click", () => {
   const searchTerm = searchInput.value.trim();
-  
+
   fetch("./js/books.json")
-  .then((response) => response.json())
-  .then((data) => {
-    const results = data.data.books.filter((book) =>
-      bookMatches(book, searchTerm)
-  );
-  
-  if (results.length === 0) {
+    .then((response) => response.json())
+    .then((data) => {
+      const results = data.data.books.filter((book) =>
+        bookMatches(book, searchTerm)
+      );
+
+      if (results.length === 0) {
         booksPanel.innerHTML = "";
         booksPanel.innerHTML = `<p>No results found for "${searchTerm}".</p>`;
         return;
@@ -45,12 +45,20 @@ searchButton.addEventListener("click", () => {
             .map(
               (book) => `
             <div class="book-card">
-              <div class="book-card-image image" style="background-image:url(${book.cover_image})"></div>
+              <div class="book-card-image image" style="background-image:url(${
+                book.cover_image
+              })">
+              <span class="search-genre-tag">${book.genre}</span>
+              
+              </div>
               <h3>${book.title}</h3>
               <p><strong>Author:</strong> ${book.author}</p>
-              <p><strong>Genre:</strong> ${book.genre}</p>
               <p><strong>Rating:</strong> ${book.rating}</p>
-              <p>${book.description}</p>
+              <p>${
+                book.description.split(" ").length > 10
+                  ? book.description.split(" ").slice(0, 20).join(" ")
+                  : book.description
+              }</p>
             </div>
           `
             )
