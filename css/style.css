@@ -130,7 +130,7 @@ main {
 
 .book-cover {
   width: 80%;
-  height: 280px;
+  height: 300px;
   margin: 0 10%;
   position: relative;
   box-shadow: 1px 5px 10px rgb(0, 0, 0,0.9);
