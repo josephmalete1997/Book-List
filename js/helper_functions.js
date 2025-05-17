@@ -33,7 +33,7 @@ function createBooks(item) {
   bookTitle.className = "book-title";
   const isDark = localStorage.getItem("theme") === "dark";
   bookTitle.classList.toggle("white-color", isDark);
-  
+
   bookTitle.innerHTML =
     item.title.length > 20 ? item.title.slice(0, 20) + "..." : item.title;
 
@@ -150,6 +150,9 @@ function populateFavorite() {
       <p><strong>Author</strong> ${item.author}</p>
       </div>
       </div>`;
+      deleteBtn.addEventListener('click',()=>{
+        //remove
+      })
       book.append(deleteBtn);
       FavoriteBooksList.append(book);
     });
