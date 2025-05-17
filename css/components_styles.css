@@ -82,6 +82,7 @@
 
 .book-details .right {
   flex: 1;
+  overflow-y: auto;
 }
 
 .viewed-book-cover {
