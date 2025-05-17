@@ -11,7 +11,7 @@ const elements = {
   successMessage: document.querySelector(".message-pop-up"),
   favoriteCount: document.querySelector(".favorite-count"),
   searchInput: document.querySelector(".search input"),
-  searchButton: document.querySelector(".search input"),
+  searchButton: document.querySelector(".search button"),
 };
 
 export { elements };

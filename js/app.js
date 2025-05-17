@@ -73,7 +73,7 @@ function getBooksByGenre(data, genre) {
   }
 }
 
-fetch("js/data.json", {})
+fetch("js/books.json", {})
   .then((response) => response.json())
   .then((data) => {
     console.log(data);

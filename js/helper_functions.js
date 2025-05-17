@@ -83,16 +83,23 @@ function viewBook(item) {
 }
 
 function populateFavorite() {
-  if (favoriteBooks) {
-    favoriteBooks.forEach((item) => {
+  let refreshStorage = favoriteBooks;
+  if (refreshStorage.length > 0) {
+    refreshStorage = favoriteBooks;
+    FavoriteBooksList.innerHTML = "";
+    refreshStorage.forEach((item) => {
       const book = document.createElement("div");
+      const deleteBtn = document.createElement("div");
+      deleteBtn.className = "remove-favorite";
+      deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> Remove`;
       book.innerHTML = `<div class="favorite-book">
-      <div class="favorite-book-cover" style="backgroundImage: url(${item.cover_image});"></div>
+      <div class="favorite-book-cover" style="background-image: url(${item.cover_image});"></div>
       <div class="favorite-book-text">
-        <p>${item.title}</p>
-        <div><button>Remove</button></div>
+      <strong><p>${item.title}</p></strong>
+      <p><strong>Author</strong> ${item.author}</p>
       </div>
-   </div>`;
+      </div>`;
+      book.append(deleteBtn);
       FavoriteBooksList.append(book);
     });
   } else {

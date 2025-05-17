@@ -1,0 +1,16 @@
+.book-results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-card {
+  width: 25%;
+  background: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 1% 2%;
+}
+
+.book-card img {
+  width: 100%;
+}

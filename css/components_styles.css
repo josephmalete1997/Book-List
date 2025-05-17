@@ -99,14 +99,14 @@ p {
 
 .favorites-panel {
   height: 95vh;
-  width: 380px;
+  width: 370px;
   background: white;
-  position: absolute;
+  position: fixed;
   right: -400px;
   top: 0px;
   z-index: 160;
   transition: 0.5s ease-in-out;
-  padding: 2.5vh 10px;
+  padding: 2.5vh 15px;
 }
 
 .favorites-panel h1 {
@@ -118,15 +118,21 @@ p {
 }
 
 .favorite-books {
+  overflow-y: auto;
+  height: 90%;
+  width: 95%;
+  padding-right: 5%;
 }
 
 .favorite-book {
-  width: 90%;
-  margin: 10px 5%;
-  background: #e9e9e9;
   display: flex;
-  border-radius: 5px;
-  padding: 5px;
+  padding: 5px 10px;
+  background: #eaeaea;
+  margin: 10px;
+  border-radius: 10px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
 }
 
 .favorite-book h2 {
@@ -134,12 +140,32 @@ p {
 }
 
 .favorite-book-cover {
-  width: 50px;
-  height: 75px;
-  margin: 5px;
+  width: 60px;
+  height: 70px;
+  margin-right: 5px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border: 1px solid;
+}
+
+.favorite-book-text {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.remove-favorite{
+  color: white;
+  font-size: 12px;
+  background: black;
+  padding: 5px 10px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
 }
 
 .favorite-book-text {
@@ -184,14 +210,4 @@ p {
 
 .message-pop-up.show {
   display: flex;
-}
-
-.progress {
-  width: 5%;
-  height: 2px;
-  background: #225f0a;
-  position: absolute;
-  bottom: 5px;
-  border-radius: 5px;
-  transition: 1s;
 }
