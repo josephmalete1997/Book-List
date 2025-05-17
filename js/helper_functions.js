@@ -11,8 +11,10 @@ const {
 } = elements;
 
 function showMessage(message) {
+  setTimeout(() => {
   successMessage.classList.toggle("show");
   successMessage.append(message);
+  },20)
   setTimeout(() => {
     successMessage.innerHTML = "";
     successMessage.classList.toggle("show");
@@ -160,6 +162,7 @@ function populateFavorite() {
         favoriteBooks.splice(index, 1);
         localStorage.setItem("favorite", JSON.stringify(favoriteBooks));
         populateFavorite();
+        showMessage("Removed Successfully!");
       });
 
       book.appendChild(deleteBtn);

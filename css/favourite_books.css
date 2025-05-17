@@ -35,11 +35,6 @@
   position: relative;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.3);
-  transition: .5s;
-}
-
-.favorite-book:hover {
-    transform: translateY(-10px);
 }
 
 .favorite-book h2 {
@@ -54,7 +49,6 @@
   background-position: center;
   background-size: cover;
 }
-
 
 .favorite-book-cover::before {
   content: "";
@@ -128,21 +122,22 @@
 }
 
 .message-pop-up {
-  background: #b8ff9c;
-  color: #225f0a;
-  border-radius: 5px;
-  border: 1px solid;
   position: fixed;
-  z-index: 200;
-  top: 30px;
-  right: 250px;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: none;
+  bottom: 30px;
+  left: 10%;
+  transform: translateX(-50%) scale(0.9);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 1000;
 }
 
 .message-pop-up.show {
-  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
