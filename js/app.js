@@ -2,19 +2,19 @@ const booksPanel = document.querySelector(".books-panel");
 const genrePanel = document.querySelector(".genre-list");
 
 const genreList = [
-  "All",
-  "Fiction",
-  "Dystopian",
-  "Fantasy",
-  "Romance",
-  "Adventure",
-  "Gothic",
-  "Mystery",
-  "Psychological",
-  "Epic",
-  "Non-fiction",
-  "Horror",
-  "Science Fiction",
+  { name: "All", color: "#6c757d" },
+  { name: "Fiction", color: "#007bff" },
+  { name: "Dystopian", color: "#343a40" },
+  { name: "Fantasy", color: "#6f42c1" },
+  { name: "Romance", color: "#e83e8c" },
+  { name: "Adventure", color: "#fd7e14" },
+  { name: "Gothic", color: "#495057" },
+  { name: "Mystery", color: "#20c997" },
+  { name: "Psychological", color: "#17a2b8" },
+  { name: "Epic", color: "#6610f2" },
+  { name: "Non-fiction", color: "#28a745" },
+  { name: "Horror", color: "#dc3545" },
+  { name: "Science Fiction", color: "#0dcaf0" },
 ];
 
 function getAllBooks(data) {
@@ -58,7 +58,6 @@ function getBooksByGenre(data, genre) {
             })">
        `;
       book.append(favBtn);
-      book.style.setProperty("--book-pseudo-bg", `url(${item.cover_image})`);
       booksPanel.append(book);
     }
   });
@@ -76,13 +75,13 @@ fetch("js/data.json", {})
     genreList.forEach((item) => {
       const genre = document.createElement("div");
       genre.className = "genre-btn";
-      genre.id = item;
+      genre.id = item.name;
       genre.addEventListener("click", () => {
         removeActiveGenre();
         genre.classList.add("active-genre");
-        getBooksByGenre(data, item);
+        getBooksByGenre(data, item.name);
       });
-      genre.innerHTML = item;
+      genre.innerHTML = item.name;
       genrePanel.append(genre);
     });
   })

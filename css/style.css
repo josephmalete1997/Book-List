@@ -105,16 +105,13 @@ main {
 
 .book .book-cover {
   width: 80%;
-  height: 270px;
+  height: 255px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border: 2px solid #ccc;
-  border-top: 5px solid #b5b5b5;
-  border-right: 5px solid #e4e4e4;
   margin: 0 10%;
   position: relative;
-  border-radius: 10px;
+  box-shadow: 2px 5px 10px rgb(0,0,0);
 }
 
 .fav-icon {
@@ -125,20 +122,29 @@ main {
   cursor: pointer;
 }
 
+.book .book-cover::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 100%;
+  background: rgb(233, 233, 233);
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  transform: skewY(-40deg);
+  z-index: -1;
+}
+
 .book .book-cover::after {
   content: "";
+  display: block;
   width: 100%;
-  height: 9%;
-  background-image: var(--book-pseudo-bg);
-  background-repeat: no-repeat;
-  background-position: 90% 93%;
-  background-size: cover;
+  height: 10px;
+  background: rgb(190, 190, 190);
   position: absolute;
-  transform: rotateX(180deg) skew(50deg);
-  opacity: 0.15;
-  /* filter: blur(1px); */
-  top: 100%;
-  left: -7%;
+  top: -10px;
+  left: 5px;
+  transform: skewX(-45deg);
   z-index: -1;
 }
 
