@@ -1,18 +1,13 @@
 import { elements } from "./ui_elements.js";
-const { books, headerOverlay } = elements;
-
-books.forEach((book) => {
-  book.style.background = "black";
-});
+const { bookText, headerOverlay } = elements;
 
 const switchBtn = document.querySelector(".theme-switch .dot");
 const switchBtnIcon = switchBtn.querySelector("i");
-applyStoredTheme();
 
 switchBtn.addEventListener("click", () => {
   const currentTheme = switchBtnIcon.classList.contains("fa-moon")
-    ? "dark"
-    : "light";
+  ? "dark"
+  : "light";
   setTheme(currentTheme);
 });
 
@@ -21,12 +16,15 @@ function setTheme(theme) {
   if (isDark) {
     document.body.style.background = "rgb(60, 60, 60)";
     headerOverlay.classList.add("dark-panel");
-    books.forEach((book) => book.classList.add("dark-panel"));
+    document.querySelector(".header h2").classList.add("white-color");
+    bookText.forEach((text) => text.classList.add("white-color"));
   } else {
     document.body.style.background = "#f4f4f4";
-    books.forEach((book) => book.classList.remove("dark-panel"));
+    headerOverlay.classList.remove("dark-panel");
+    document.querySelector(".header h2").classList.remove("white-color");
+    bookText.forEach((text) => text.classList.remove("white-color"));
   }
-
+  
   switchBtn.classList.toggle("move", isDark);
   switchBtnIcon.classList.toggle("fa-moon", !isDark);
   switchBtnIcon.classList.toggle("fa-sun", isDark);
@@ -38,3 +36,5 @@ function applyStoredTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
 }
+
+applyStoredTheme();

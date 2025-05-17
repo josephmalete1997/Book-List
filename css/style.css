@@ -75,7 +75,6 @@ main {
 
 .side-nav {
   flex: 1;
-  background: white;
   border-radius: 10px;
   margin: 5px;
   position: sticky;
@@ -123,7 +122,7 @@ main {
   box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.9);
 }
 
-.book h3 {
+.book-h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -199,25 +198,23 @@ main {
 
 .genre-list {
   display: flex;
-  flex-wrap: wrap;
-  font-size: 20px;
+  flex-direction: column;
+  font-size: 16px;
   font-weight: 100;
 }
 
 .genre-list div {
   cursor: pointer;
-  margin: 10px 5px;
-  background: #f3f3f3;
+  margin: 2px 0px;
+  background: #ebebeb;
   padding: 5px 10px;
-  border-radius: 30px;
+  border-radius: 10px;
   transition: 0.3s;
-  border: 1px solid #ccc;
 }
 
 .genre-list div:hover {
   background: rgb(0, 0, 0);
   color: white;
-  transform: scale(1.1);
 }
 
 div.active-genre {

@@ -1,7 +1,14 @@
+import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
 import { favoriteBooks } from "./helper_objects.js";
-const { bookDetails, FavoriteBooksList, successMessage, favoriteCount } =
-  elements;
+const {
+  bookDetails,
+  FavoriteBooksList,
+  successMessage,
+  favoriteCount,
+  overlay,
+  booksPanel,
+} = elements;
 
 function showMessage(message) {
   successMessage.classList.toggle("show");
@@ -14,6 +21,48 @@ function showMessage(message) {
 
 function getFavoriteCount(arr) {
   favoriteCount.innerHTML = ` (${arr.length})`;
+}
+
+function createBooks(item) {
+  const favBtn = document.createElement("i");
+  favBtn.className = "fa-regular fa-heart fav-icon";
+  favBtn.id = item.id;
+
+  const bookCover = document.createElement("div");
+  bookCover.className = "book-cover image";
+  bookCover.style.backgroundImage = `url(${item.cover_image})`;
+  bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;
+
+  const book = document.createElement("div");
+  book.className = "book";
+  book.id = item.id;
+  book.innerHTML = `
+            <span class="genre-tag">${item.genre}</span>
+            <h3 class="book-h3">${
+              item.title.length > 20
+                ? item.title.slice(0, 20) + "..."
+                : item.title
+            }</h3>
+       `;
+  book.append(bookCover);
+  book.append(favBtn);
+
+  favBtn.addEventListener("click", () => {
+    favBtn.classList.toggle("fa-solid");
+    favBtn.classList.toggle("scale");
+  });
+
+  bookCover.addEventListener("click", () => {
+    viewBook(item);
+    overlay.classList.toggle("show");
+    bookDetails.classList.toggle("show");
+    document.querySelector(".fa-times").addEventListener("click", () => {
+      closePopUps();
+    });
+  });
+
+  setFavorite(favBtn, item);
+  booksPanel.append(book);
 }
 
 function setFavorite(elem, book) {
@@ -107,4 +156,4 @@ function populateFavorite() {
   }
 }
 
-export { viewBook, populateFavorite, setFavorite };
+export { viewBook, populateFavorite, setFavorite, createBooks };

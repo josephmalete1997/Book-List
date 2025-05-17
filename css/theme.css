@@ -6,3 +6,7 @@
 .header.dark-panel * {
   color: white;
 }
+
+.white-color {
+  color: rgb(183, 183, 183);
+}

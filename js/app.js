@@ -1,50 +1,11 @@
-import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
-import { viewBook, setFavorite } from "./helper_functions.js";
+import { createBooks } from "./helper_functions.js";
 import { genreList } from "./helper_objects.js";
-const { bookDetails, booksPanel, genrePanel, overlay } = elements;
+const { booksPanel, genrePanel } = elements;
 
 function getAllBooks(data) {
   data["data"]["books"].forEach((item) => {
-    const favBtn = document.createElement("i");
-    favBtn.className = "fa-regular fa-heart fav-icon";
-    favBtn.id = item.id;
-
-    const bookCover = document.createElement("div");
-    bookCover.className = "book-cover image";
-    bookCover.style.backgroundImage = `url(${item.cover_image})`;
-    bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;
-
-    const book = document.createElement("div");
-    book.className = "book";
-    book.id = item.id;
-    book.innerHTML = `
-            <span class="genre-tag">${item.genre}</span>
-            <h3>${
-              item.title.length > 20
-                ? item.title.slice(0, 20) + "..."
-                : item.title
-            }</h3>
-       `;
-    book.append(bookCover);
-    book.append(favBtn);
-
-    favBtn.addEventListener("click", () => {
-      favBtn.classList.toggle("fa-solid");
-      favBtn.classList.toggle("scale");
-    });
-
-    bookCover.addEventListener("click", () => {
-      viewBook(item);
-      overlay.classList.toggle("show");
-      bookDetails.classList.toggle("show");
-      document.querySelector(".fa-times").addEventListener("click", () => {
-        closePopUps();
-      });
-    });
-
-    setFavorite(favBtn, item);
-    booksPanel.append(book);
+    createBooks(item);
   });
 }
 
@@ -52,20 +13,7 @@ function getBooksByGenre(data, genre) {
   booksPanel.innerHTML = "";
   data["data"]["books"].forEach((item) => {
     if (item.genre === genre) {
-      const favBtn = document.createElement("i");
-      favBtn.className = "fa-regular fa-heart fav-icon";
-      const book = document.createElement("div");
-      book.className = "book";
-      book.id = item.id;
-      book.innerHTML = `
-            <span class="genre-tag">${item.genre}</span>
-            <h3>${item.title.slice(0, 20)}...</h3>
-            <div class="book-cover" style="background-image:url(${
-              item.cover_image
-            })">
-       `;
-      book.append(favBtn);
-      booksPanel.append(book);
+      createBooks(item);
     }
   });
   if (genre === "All") {
