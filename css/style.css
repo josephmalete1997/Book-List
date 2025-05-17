@@ -122,10 +122,14 @@ main {
   box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.9);
 }
 
-.book-h3 {
+.book-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.book-title.white-color {
+  color: rgb(226, 226, 226);
 }
 
 .book-cover {

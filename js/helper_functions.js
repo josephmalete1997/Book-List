@@ -38,7 +38,7 @@ function createBooks(item) {
   book.id = item.id;
   book.innerHTML = `
             <span class="genre-tag">${item.genre}</span>
-            <h3 class="book-h3">${
+            <h3 class="book-title">${
               item.title.length > 20
                 ? item.title.slice(0, 20) + "..."
                 : item.title
