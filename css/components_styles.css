@@ -1,0 +1,36 @@
+/* Switch style */
+.theme-switch {
+  width: 75px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.theme-switch .circle {
+  background: #ccc;
+  width: 100%;
+  height: 15px;
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+.theme-switch .dot {
+  background: #626262;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  left: 0%;
+}
+
+.theme-switch .dot.move {
+  left: calc(100% - 30px);
+}
