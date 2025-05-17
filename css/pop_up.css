@@ -1,0 +1,10 @@
+.fa-times {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.fa-times:hover {
+    color: red;
+}

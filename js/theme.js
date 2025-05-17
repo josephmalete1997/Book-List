@@ -25,7 +25,7 @@ function setTheme(theme) {
     switchBtnIcon.classList.remove("fa-moon");
     switchBtnIcon.classList.add("fa-sun");
   } else {
-    document.body.style.background = "white";
+    document.body.style.background = "#ccc";
     document.querySelectorAll(".book").forEach((book) => {
       book.style.background = "#f9f9f9";
       book.style.color = "#333";
