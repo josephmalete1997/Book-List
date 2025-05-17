@@ -178,7 +178,7 @@ main {
   right: -7px;
   transform: skewY(-50deg);
   z-index: -1;
-  box-shadow: inset -1px 1px 5px rgb(0, 0, 0, 0.1);
+  box-shadow: inset -3px -3px 1px rgb(0, 0, 0, 0.3);
 }
 
 .book .book-cover::after {
@@ -192,7 +192,7 @@ main {
   left: 4px;
   transform: skewX(-50deg);
   z-index: -1;
-  box-shadow: inset -1px 1px 5px rgb(0, 0, 0, 0.2);
+  box-shadow: inset 3px 3px 1px rgb(0, 0, 0, 0.3);
 }
 
 .genre-list {
