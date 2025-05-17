@@ -29,6 +29,14 @@ function createBooks(item) {
   favBtn.id = item.id;
 
   const bookCover = document.createElement("div");
+  const bookTitle = document.createElement("h3");
+  bookTitle.className = "book-title";
+  const isDark = localStorage.getItem("theme") === "dark";
+  bookTitle.classList.toggle("white-color", isDark);
+  
+  bookTitle.innerHTML =
+    item.title.length > 20 ? item.title.slice(0, 20) + "..." : item.title;
+
   bookCover.className = "book-cover image";
   bookCover.style.backgroundImage = `url(${item.cover_image})`;
   bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;
@@ -36,14 +44,8 @@ function createBooks(item) {
   const book = document.createElement("div");
   book.className = "book";
   book.id = item.id;
-  book.innerHTML = `
-            <span class="genre-tag">${item.genre}</span>
-            <h3 class="book-title">${
-              item.title.length > 20
-                ? item.title.slice(0, 20) + "..."
-                : item.title
-            }</h3>
-       `;
+  book.innerHTML = `<span class="genre-tag">${item.genre}</span>`;
+  book.append(bookTitle);
   book.append(bookCover);
   book.append(favBtn);
 

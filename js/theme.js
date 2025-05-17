@@ -15,8 +15,8 @@ switchBtn.addEventListener("click", () => {
 function setTheme(theme) {
   const isDark = theme === "dark";
 
-  bookText.forEach((text) => {
-    text.classList.toggle("white-color", !isDark);
+  document.querySelectorAll(".book-title").forEach((text) => {
+    text.classList.toggle("white-color", isDark);
   });
 
   bookDetails.classList.toggle("dark-panel", isDark);
