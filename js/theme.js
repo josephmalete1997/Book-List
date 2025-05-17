@@ -1,5 +1,5 @@
 import { elements } from "./ui_elements.js";
-const { bookText, headerOverlay, bookDetails } = elements;
+const { favoritesPanel, headerOverlay, bookDetails } = elements;
 
 const switchBtn = document.querySelector(".theme-switch .dot");
 const switchBtnIcon = switchBtn.querySelector("i");
@@ -20,6 +20,7 @@ function setTheme(theme) {
   });
 
   bookDetails.classList.toggle("dark-panel", isDark);
+  favoritesPanel.classList.toggle("dark-panel", isDark);
 
   if (isDark) {
     document.body.style.background = "rgb(60, 60, 60)";
