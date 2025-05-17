@@ -61,7 +61,7 @@ div {
 
 main {
   display: flex;
-  background: #ccc;
+  background: #c8c8c8;
 }
 
 .side-nav {
@@ -90,6 +90,7 @@ main {
   border-radius: 10px;
   overflow: hidden;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .book:hover {
@@ -127,17 +128,17 @@ main {
 .book .book-cover::after {
   content: "";
   width: 100%;
-  height: 10%;
+  height: 9%;
   background-image: var(--book-pseudo-bg);
   background-repeat: no-repeat;
   background-position: 90% 93%;
   background-size: cover;
   position: absolute;
-  transform: rotateX(180deg) skew(30deg);
-  opacity: 0.2;
+  transform: rotateX(180deg) skew(50deg);
+  opacity: 0.15;
   /* filter: blur(1px); */
   top: 100%;
-  left: -3%;
+  left: -7%;
   z-index: -1;
 }
 
@@ -163,7 +164,7 @@ div.active-genre{
 }
 
 .sort {
-  background: #ccc;
+background: #f3f3f3;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
