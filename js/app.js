@@ -38,14 +38,17 @@ function getAllBooks(data) {
             })">
        `;
     book.append(favBtn);
-    book.addEventListener("click", () => {
-      viewBook(item);
-      overlay.classList.toggle("show");
-      bookDetails.classList.toggle("show");
-      document.querySelector(".fa-times").addEventListener("click", () => {
-        closePopUps();
-      });
+    favBtn.addEventListener("click", () => {
+      favBtn.classList.toggle("fa-solid");
     });
+    // book.addEventListener("click", () => {
+    //   viewBook(item);
+    //   overlay.classList.toggle("show");
+    //   bookDetails.classList.toggle("show");
+    //   document.querySelector(".fa-times").addEventListener("click", () => {
+    //     closePopUps();
+    //   });
+    // });
 
     booksPanel.append(book);
   });

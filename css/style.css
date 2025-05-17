@@ -120,6 +120,15 @@ main {
   top: 20px;
   font-size: 18px;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fav-icon:hover {
+  background: rgb(226, 226, 226);
 }
 
 .book .book-cover::before {
@@ -146,7 +155,7 @@ main {
   left: 5px;
   transform: skewX(-45deg);
   z-index: -1;
-  border-radius: 60px 0 0 0 ;
+  border-radius: 60px 0 0 0;
 }
 
 .genre-list {
