@@ -241,10 +241,165 @@
         "cover_image": "https://covers.openlibrary.org/b/id/8273489-L.jpg",
         "rating": 4.6,
         "page_count": 412
-      }
-    ],
+      },
+  {
+    "id": 21,
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "isbn": "9780385490818",
+    "published_date": "1985-06-01",
+    "genre": "Dystopian",
+    "description": "Set in the near future, in the Republic of Gilead, a theocratic military dictatorship formed within the borders of what was formerly the United States of America. Facing environmental disasters and a plunging birthrate, Gilead is ruled by a twisted fundamentalist regime that treats women as property of the state. Offred serves as a Handmaid in the Commander's household, one of the caste of women forced into sexual servitude as a last desperate attempt to repopulate a devastated world. Offred recalls her life before the regime and navigates a dangerous path of compliance and resistance in this haunting tale of power and survival.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8231581-L.jpg",
+    "rating": 4.5,
+    "page_count": 311
+  },
+  {
+    "id": 22,
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "isbn": "9781451673319",
+    "published_date": "1953-10-19",
+    "genre": "Dystopian",
+    "description": "In a future American society where books are outlawed and 'firemen' burn any that are found, Guy Montag is a fireman who becomes disillusioned with his role of censorship. After meeting a young neighbor who introduces him to the world of books and ideas, Montag begins to question his job and the oppressive society he serves. As he collects and hides books, he risks everything for the right to read and the preservation of knowledge and culture. Bradbury's cautionary tale explores themes of censorship, conformity, and the loss of individualism in a society obsessed with mass media and instant gratification rather than critical thinking and meaningful human connection.",
+    "cover_image": "https://covers.openlibrary.org/b/id/12553918-L.jpg",
+    "rating": 4.6,
+    "page_count": 249
+  },
+  {
+    "id": 23,
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "isbn": "9780307744432",
+    "published_date": "2011-09-13",
+    "genre": "Fantasy",
+    "description": "The circus arrives without warning. No announcements precede it. It is simply there, when yesterday it was not. Within the black-and-white striped canvas tents is an utterly unique experience full of breathtaking amazements. It is called Le Cirque des Rêves, and it is only open at night. Behind the scenes, a fierce competition is underway between two young magicians, Celia and Marco, who have been trained since childhood expressly for this purpose by their mercurial instructors. Unbeknownst to them, this is a game in which only one can be left standing, and the circus is but the stage for a remarkable battle of imagination and will. Their lives and the very fabric of the circus itself become intertwined in a dangerous performance.",
+    "cover_image": "https://covers.openlibrary.org/b/id/7743443-L.jpg",
+    "rating": 4.5,
+    "page_count": 516
+  },
+  {
+    "id": 24,
+    "title": "Outlander",
+    "author": "Diana Gabaldon",
+    "isbn": "9780440212560",
+    "published_date": "1991-06-01",
+    "genre": "Romance",
+    "description": "In 1945, former combat nurse Claire Randall returns from World War II and joins her husband for a second honeymoon. Their blissful reunion is shattered when she touches an ancient stone circle and is hurled back in time to 1743 Scotland, a place torn by war and raiding border clans. Claire is catapulted into the intrigues of a world both foreign and perilous, where her freedom and life are threatened. When she's forced to marry Jamie Fraser, a chivalrous and romantic young Scottish warrior, Claire becomes torn between her loyalties to two men in two irreconcilable lives. Gabaldon weaves an epic tale of love, adventure, history, and time travel in a richly detailed world where danger lurks at every turn.",
+    "cover_image": "https://covers.openlibrary.org/b/id/12896169-L.jpg",
+    "rating": 4.7,
+    "page_count": 850
+  },
+  {
+    "id": 25,
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "isbn": "9780307387899",
+    "published_date": "2006-09-26",
+    "genre": "Dystopian",
+    "description": "A father and his young son journey across post-apocalyptic America some years after an extinction event. The land is covered with ash and devoid of life. The boy's mother, overwhelmed by the hopelessness of their situation, has committed suicide. The two scavenge for food, avoiding bands of cannibals, as they travel toward the coast in the hope that it will be warmer. They carry their few possessions in backpacks and a shopping cart, including a revolver with two bullets. The father coughs blood and knows he is dying. Throughout their journey, the father reminds his son that they are 'carrying the fire,' representing hope and civilization in a world of savagery and desolation.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8260357-L.jpg",
+    "rating": 4.6,
+    "page_count": 287
+  },
+  {
+    "id": 26,
+    "title": "The Shadow of the Wind",
+    "author": "Carlos Ruiz Zafón",
+    "isbn": "9780143034902",
+    "published_date": "2001-04-17",
+    "genre": "Mystery",
+    "description": "In post-war Barcelona, young Daniel Sempere is taken by his father to the Cemetery of Forgotten Books, a secret labyrinthine library of rare titles. There, he is allowed to choose one book to protect, and he selects 'The Shadow of the Wind' by Julián Carax. Enthralled by the novel, Daniel sets out to find other works by the enigmatic author, only to discover that someone has been systematically destroying every copy of every book Carax has written. As Daniel's quest unfolds, he becomes embroiled in a mystery connected to a cursed gothic mansion and the dark secrets of Barcelona's troubled past. Zafón's atmospheric literary thriller weaves together romance, intrigue, and the magical power of books in a mesmerizing tale of obsession and redemption.",
+    "cover_image": "https://covers.openlibrary.org/b/id/12647115-L.jpg",
+    "rating": 4.7,
+    "page_count": 487
+  },
+  {
+    "id": 27,
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "isbn": "9780553593716",
+    "published_date": "1996-08-01",
+    "genre": "Fantasy",
+    "description": "In the frozen lands of the North, sinister and supernatural forces are massing beyond the kingdom's protective Wall. At the center of the conflict lie the Starks of Winterfell, a family as harsh and unyielding as the land they were born to. Sweeping from a harsh land of cold to a summertime kingdom of epicurean plenty, this is a tale of lords and ladies, soldiers and sorcerers, assassins and bastards, who come together in a time of grim omens. Amid plots and counterplots, tragedy and betrayal, victory and terror, the fate of the Starks, their allies, and their enemies hangs perilously in the balance, as each endeavors to win that deadliest of conflicts: the game of thrones. Martin's richly detailed world-building creates an unforgettable medieval fantasy epic.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8304287-L.jpg",
+    "rating": 4.7,
+    "page_count": 835
+  },
+  {
+    "id": 28,
+    "title": "Rebecca",
+    "author": "Daphne du Maurier",
+    "isbn": "9780380730407",
+    "published_date": "1938-08-01",
+    "genre": "Gothic",
+    "description": "Working as a lady's companion, the orphaned heroine meets the wealthy widower Maxim de Winter in Monte Carlo. After a brief courtship, she agrees to marry him and accompanies him to his mansion, the isolated Manderley on the Cornish coast. There, the young bride finds herself living in the shadow of Rebecca, Maxim's beautiful first wife, who died under mysterious circumstances. She becomes increasingly obsessed with her predecessor, whose legacy is kept alive by the sinister housekeeper, Mrs. Danvers. As the nameless narrator tries to settle into her role as mistress of Manderley, dark secrets gradually unfold, threatening her marriage and sanity. This gothic masterpiece combines psychological suspense with romantic elements in a brooding, unforgettable tale of jealousy and hidden truths.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8314287-L.jpg",
+    "rating": 4.6,
+    "page_count": 416
+  },
+  {
+    "id": 29,
+    "title": "The Secret History",
+    "author": "Donna Tartt",
+    "isbn": "9781400031702",
+    "published_date": "1992-09-01",
+    "genre": "Psychological",
+    "description": "Under the influence of their charismatic classics professor, a group of eccentric Greek scholars at an elite New England college discover a way of thinking and living that is a world away from the humdrum existence of their contemporaries. But when they go beyond the boundaries of normal morality, their lives are profoundly and forever altered. Told from the perspective of one of the students, Richard Papen, the novel begins with a murder and then retraces the events leading up to it. Unlike the traditional whodunit, this inverted detective story reveals the crime at the outset and focuses on the psychological aftermath rather than the mystery of the perpetrator. Tartt's masterfully crafted tale explores themes of beauty, corruption, and the consequences of transgression.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8459272-L.jpg",
+    "rating": 4.5,
+    "page_count": 559
+  },
+  {
+    "id": 30,
+    "title": "Educated",
+    "author": "Tara Westover",
+    "isbn": "9780399590504",
+    "published_date": "2018-02-20",
+    "genre": "Non-fiction",
+    "description": "Born to survivalists in the mountains of Idaho, Tara Westover was seventeen the first time she set foot in a classroom. Her family was so isolated from mainstream society that there was no one to ensure the children received an education, and no one to intervene when her older brother became violent. When another brother got himself into college, Tara decided to try a new kind of life. Her quest for knowledge transformed her, taking her over oceans and across continents, to Harvard and to Cambridge University. Only then would she wonder if she'd traveled too far, if there was still a way home. This memoir is an account of the struggle for self-invention, a tale of fierce family loyalty, and the grief that comes with severing the closest of ties.",
+    "cover_image": "https://covers.openlibrary.org/b/id/10332514-L.jpg",
+    "rating": 4.8,
+    "page_count": 334
+  },
+  {
+    "id": 31,
+    "title": "Station Eleven",
+    "author": "Emily St. John Mandel",
+    "isbn": "9780804172448",
+    "published_date": "2014-09-09",
+    "genre": "Dystopian",
+    "description": "One snowy night, a famous actor dies onstage during a production of King Lear. Hours later, the world as we know it begins to dissolve. A devastating flu pandemic eliminates 99% of the population. Twenty years later, a small group of survivors, the Traveling Symphony, have dedicated themselves to keeping the remnants of art and humanity alive. Traveling between the settlements of this altered world, they perform Shakespeare and music for scattered communities of survivors. Moving back and forth in time between the actor's early days and the post-apocalyptic world, the novel charts the strange twists of fate that connect five people: the actor, the man who tried to save him, the actor's first wife, his oldest friend, and a young actress with the Traveling Symphony, caught in the crosshairs of a dangerous self-proclaimed prophet.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8267375-L.jpg",
+    "rating": 4.5,
+    "page_count": 333
+  },
+  {
+    "id": 32,
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "isbn": "9781400078776",
+    "published_date": "2005-03-03",
+    "genre": "Dystopian",
+    "description": "As children, Kathy, Ruth, and Tommy were students at Hailsham, an exclusive boarding school secluded in the English countryside. It was a place of mercurial cliques and mysterious rules where teachers were constantly reminding their charges of how special they were. Now, years later, Kathy is a young woman. Ruth and Tommy have reentered her life. And for the first time she is beginning to look back at their shared past and understand just what it is that makes them special—and how that gift will shape the rest of their time together. Elegiac in tone, Ishiguro's haunting novel gradually reveals the full scope of the dystopian world they inhabit, raising profound questions about what it means to be human, the ethics of scientific progress, and the purpose of existence in a society that views certain lives as expendable.",
+    "cover_image": "https://covers.openlibrary.org/b/id/9325393-L.jpg",
+    "rating": 4.5,
+    "page_count": 288
+  },
+  {
+    "id": 33,
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "isbn": "9780756404741",
+    "published_date": "2007-03-27",
+    "genre": "Fantasy",
+    "description": "Told in Kvothe's own voice, this is the tale of the magically gifted young man who grows to be the most notorious wizard his world has ever seen. The intimate narrative of his childhood in a troupe of traveling players, his years spent as a near-feral orphan in a crime-ridden city, his daringly brazen yet successful bid to enter a legendary school of magic, and his life as a fugitive after the murder of a king form a gripping coming-of-age story unrivaled in recent literature. A high-action story written with a poet's hand, The Name of the Wind is a masterpiece that transports readers into the body and mind of a wizard. It is a world of adventure and mystery, of intricate magic systems, of university studies and courtly intrigue, all woven together in Rothfuss's mesmerizing prose.",
+    "cover_image": "https://covers.openlibrary.org/b/id/8259627-L.jpg",
+    "rating": 4.8,
+    "page_count": 662
+  }],
     "total": 20,
     "page": 1,
-    "limit": 20
+    "limit": 6
   }
 }
