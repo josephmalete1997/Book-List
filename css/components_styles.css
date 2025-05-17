@@ -1,4 +1,10 @@
-/* Switch style */
+/* image */
+.image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .theme-switch {
   width: 75px;
   height: 30px;
@@ -155,7 +161,7 @@ p {
   position: relative;
 }
 
-.remove-favorite{
+.remove-favorite {
   color: white;
   font-size: 12px;
   background: black;

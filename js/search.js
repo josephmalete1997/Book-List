@@ -24,28 +24,28 @@ function bookMatches(book, pattern) {
 
 searchButton.addEventListener("click", () => {
   const searchTerm = searchInput.value.trim();
-  booksPanel.innerHTML = "";
-
+  
   fetch("./js/books.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const results = data.data.books.filter((book) =>
-        bookMatches(book, searchTerm)
-      );
-
-      if (results.length === 0) {
+  .then((response) => response.json())
+  .then((data) => {
+    const results = data.data.books.filter((book) =>
+      bookMatches(book, searchTerm)
+  );
+  
+  if (results.length === 0) {
+        booksPanel.innerHTML = "";
         booksPanel.innerHTML = `<p>No results found for "${searchTerm}".</p>`;
         return;
       }
-
-      booksPanel.innerHTML = `
-        <h2>Results for "${searchTerm}":</h2>
+      if (searchTerm != "") {
+        booksPanel.innerHTML = `
+        <h2 style="margin-left:50px;">Results for "${searchTerm}":</h2>
         <div class="book-results">
           ${results
             .map(
               (book) => `
             <div class="book-card">
-              <div style="background-image:url(${book.cover_image})"></div>
+              <div class="book-card-image image" style="background-image:url(${book.cover_image})"></div>
               <h3>${book.title}</h3>
               <p><strong>Author:</strong> ${book.author}</p>
               <p><strong>Genre:</strong> ${book.genre}</p>
@@ -57,6 +57,7 @@ searchButton.addEventListener("click", () => {
             .join("")}
         </div>
       `;
+      }
     })
     .catch((error) => {
       console.error("Fetch error:", error);
