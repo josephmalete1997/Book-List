@@ -1,5 +1,6 @@
 const elements = {
   booksPanel: document.querySelector(".books-panel"),
+  books: document.querySelectorAll(".book"),
   genrePanel: document.querySelector(".genre-list"),
   overlay: document.querySelector(".overlay"),
   bookDetails: document.querySelector(".book-details"),

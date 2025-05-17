@@ -1,39 +1,37 @@
-const switchBtn = document.querySelector(".theme-switch .dot");
-const switchBtnIcon = document.querySelector(".theme-switch .dot i");
+import { elements } from "./ui_elements.js";
+const { books } = elements;
 
-// Apply the stored theme on load
+books.forEach((book) => {
+  book.style.background = "black";
+});
+
+const switchBtn = document.querySelector(".theme-switch .dot");
+const switchBtnIcon = switchBtn.querySelector("i");
+
 applyStoredTheme();
 
 switchBtn.addEventListener("click", () => {
-  const isDark = switchBtnIcon.classList.contains("fa-moon");
-
-  if (isDark) {
-    setTheme("dark");
-  } else {
-    setTheme("light");
-  }
+  const currentTheme = switchBtnIcon.classList.contains("fa-moon")
+    ? "dark"
+    : "light";
+  setTheme(currentTheme);
 });
 
+
+
 function setTheme(theme) {
-  if (theme === "dark") {
-    document.body.style.background = "black";
-    document.querySelectorAll(".book").forEach((book) => {
-      book.style.background = "#323232";
-      book.style.color = "white";
-    });
-    switchBtn.classList.add("move");
-    switchBtnIcon.classList.remove("fa-moon");
-    switchBtnIcon.classList.add("fa-sun");
+  const isDark = theme === "dark";
+  if (isDark) {
+    document.body.style.background = "rgb(60, 60, 60)";
+    // books.forEach((book) => book.classList.add("dark-panel"));
   } else {
-    document.body.style.background = "#ccc";
-    document.querySelectorAll(".book").forEach((book) => {
-      book.style.background = "#f9f9f9";
-      book.style.color = "#333";
-    });
-    switchBtn.classList.remove("move");
-    switchBtnIcon.classList.remove("fa-sun");
-    switchBtnIcon.classList.add("fa-moon");
+    document.body.style.background = "#f4f4f4";
+    // books.forEach((book) => book.classList.remove("dark-panel"));
   }
+
+  switchBtn.classList.toggle("move", isDark);
+  switchBtnIcon.classList.toggle("fa-moon", !isDark);
+  switchBtnIcon.classList.toggle("fa-sun", isDark);
 
   localStorage.setItem("theme", theme);
 }

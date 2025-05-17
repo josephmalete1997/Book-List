@@ -11,7 +11,7 @@ function getAllBooks(data) {
     favBtn.id = item.id;
 
     const bookCover = document.createElement("div");
-    bookCover.className = "book-cover";
+    bookCover.className = "book-cover image";
     bookCover.style.backgroundImage = `url(${item.cover_image})`;
     bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;
 
