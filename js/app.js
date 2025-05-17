@@ -1,39 +1,25 @@
 import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
-import { viewBook } from "./helper_functions.js";
-const { bookDetails, booksPanel, genrePanel, overlay, closeBtn } = elements;
-
-const genreList = [
-  "All",
-  "Fiction",
-  "Dystopian",
-  "Fantasy",
-  "Romance",
-  "Adventure",
-  "Gothic",
-  "Mystery",
-  "Psychological",
-  "Epic",
-  "Non-fiction",
-  "Horror",
-  "Science Fiction",
-];
+import { viewBook, addToFavorite, setFavorite } from "./helper_functions.js";
+import { genreList } from "./helper_objects.js";
+const { bookDetails, booksPanel, genrePanel, overlay } = elements;
 
 function getAllBooks(data) {
-  data["data"]["books"].forEach((item, index) => {
+  data["data"]["books"].forEach((item) => {
     const favBtn = document.createElement("i");
     favBtn.className = "fa-regular fa-heart fav-icon";
+    favBtn.id = item.id;
 
     const bookCover = document.createElement("div");
     bookCover.className = "book-cover";
     bookCover.style.backgroundImage = `url(${item.cover_image})`;
+    bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;
 
     const book = document.createElement("div");
     book.className = "book";
     book.id = item.id;
     book.innerHTML = `
             <span class="genre-tag">${item.genre}</span>
-            <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>
             <h3>${
               item.title.length > 20
                 ? item.title.slice(0, 20) + "..."
@@ -42,7 +28,10 @@ function getAllBooks(data) {
        `;
     book.append(bookCover);
     book.append(favBtn);
+    setFavorite(favBtn, JSON.parse(localStorage.getItem("favorite")));
+
     favBtn.addEventListener("click", () => {
+      addToFavorite(item);
       favBtn.classList.toggle("fa-solid");
       favBtn.classList.toggle("scale");
     });

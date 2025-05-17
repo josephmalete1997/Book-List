@@ -65,10 +65,11 @@
   display: none;
 }
 
-.book-details h3,p{
+.book-details h3,
+p {
   margin: 0;
 }
-.book-details p{
+.book-details p {
   margin: 12px 0;
 }
 
@@ -83,6 +84,7 @@
 .book-details .right {
   flex: 1;
   overflow-y: auto;
+  margin-right: 10px;
 }
 
 .viewed-book-cover {
@@ -91,6 +93,74 @@
   background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQttbZNVGzKnwLBGXrKBkt0VY2J2DubjnH_lSQrJCzdSf5fe4OK8yUM27EYhteFc68Ii7Xr9g");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 90%;
   border-radius: 5px;
+}
+
+.favorites-panel {
+  height: 95vh;
+  width: 380px;
+  background: white;
+  position: absolute;
+  right: -400px;
+  top: 0px;
+  z-index: 160;
+  transition: .5s ease-in-out;
+  padding: 2.5vh 10px;
+}
+
+.favorites-panel h1{
+  margin-left: 15px;
+}
+
+.favorites-panel.open-panel{
+  right: 0px;
+}
+
+.favorite-books{
+
+}
+
+.favorite-book{
+  width: 90%;
+  margin: 10px 5%;
+  background: #e9e9e9;
+  display: flex;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.favorite-book h2{ 
+  margin: 0px;
+}
+
+.favorite-book-cover{
+  width: 50px;
+  height: 75px;
+  background: black;
+  margin: 5px;
+}
+
+.favorite-book-text{
+
+}
+
+/* scroll-bar */
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #888 #f1f1f1; 
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }

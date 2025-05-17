@@ -11,19 +11,19 @@
       src="https://kit.fontawesome.com/062d0051ac.js"
       crossorigin="anonymous"
     ></script>
-    <title>Book List</title>
+    <title>Book List | Joseph Malete</title>
   </head>
   <body>
     <div class="header">
       <div class="header-overlay"></div>
-      <h1>
+      <h2>
         <i class="fa-solid fa-folder"></i> My Virtual Library
         <span style="font-weight: 100; color: #ababab">|</span> Book List
-      </h1>
+      </h2>
       <div class="search">
         <input type="text" placeholder="search for books" />
         <button class="search-bitton">
-          <i class="fa-solid fa-search"></i>Search
+          <i class="fa-solid fa-search"></i> Search
         </button>
       </div>
       <div
@@ -62,7 +62,16 @@
     </main>
     <div class="overlay"></div>
     <div class="book-details"></div>
+    <div class="favorites-panel">
+      <i class="fa-solid fa-times close-favorite"></i>
+      <h1>Favorite Books</h1>
+      <div class="favorite-books">
+        
+      </div>
+    </div>
+
     <script type="module" src="js/pop_up.js"></script>
+    <script type="module" src="js/helper_objects.js"></script>
     <script type="module" src="js/ui_elements.js"></script>
     <script type="module" src="js/app.js"></script>
     <script type="module" src="js/theme.js"></script>

@@ -3,6 +3,7 @@ body {
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
   background: #c8c8c8;
+  overflow-x: hidden;
 }
 
 .header {
@@ -31,7 +32,7 @@ body {
   z-index: 1;
 }
 
-.header h1,
+.header h2,
 i,
 div {
   position: relative;
@@ -100,20 +101,15 @@ main {
   transition: 0.5s;
 }
 
-.book:hover .book-tool-tip {
-  visibility: visible;
-  opacity: 1;
-}
-
 .book-tool-tip {
   background: #000000;
-  width: 50%;
+  width: 80%;
   padding: 10px 20px;
   color: white;
   position: absolute;
   top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%); 
+  left: 10%;
+  transform: translate(-10%, -50%); 
   z-index: 10;
   border-radius: 5px;
   visibility: hidden;
@@ -131,7 +127,7 @@ main {
   justify-content: space-between;
 }
 
-.book .book-cover {
+.book-cover {
   width: 80%;
   height: 255px;
   background-repeat: no-repeat;
@@ -142,6 +138,12 @@ main {
   box-shadow: 2px 5px 10px rgb(0, 0, 0);
   cursor: pointer;
 }
+
+.book-cover:hover .book-tool-tip {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .fav-icon {
   position: absolute;
