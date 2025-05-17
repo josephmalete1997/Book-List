@@ -1,7 +1,6 @@
-const booksPanel = document.querySelector(".books-panel");
-const genrePanel = document.querySelector(".genre-list");
-const overlay = document.querySelector(".overlay");
-const bookDetails = document.querySelector(".book-details");
+import { closePopUps } from "./pop_up.js";
+import { elements } from "./ui_elements.js";
+const { bookDetails, booksPanel, genrePanel, overlay, closeBtn } = elements;
 
 const genreList = [
   { name: "All", color: "#6c757d" },
@@ -19,27 +18,7 @@ const genreList = [
   { name: "Science Fiction", color: "#0dcaf0" },
 ];
 
-function viewBook(data, id) {
-  bookDetails.innerHTML = `
-  <i class="fa-solid fa-times"></i>
-    <div class='left'>
-        <div class="viewed-book-cover"></div>
-    </div>
-    <div class='right'>
-    <h1>Title:</h1>
-    <h3>Author: Joseph Malete</h3>
-    <p>Genre: </p>
-    <h4>Description:</h4>
-    <p>A murder in the Louvre reveals a religious conspiracy.</p>
-    <p>Rating: </p>
-    <p>ISBN: </p>
-    <p>Date Published: 1997-06-26</p>
-    <p>Number of pages: 209</p>
-    </div>
-    `;
-}
 
-viewBook(2, 2);
 
 function getAllBooks(data) {
   data["data"]["books"].forEach((item, index) => {
@@ -60,10 +39,15 @@ function getAllBooks(data) {
             })">
        `;
     book.append(favBtn);
-    book.addEventListener('click',()=>{
-        overlay.classList.toggle("show");
-        bookDetails.classList.toggle("show");
-    })
+    book.addEventListener("click", () => {
+    //   viewBook(data);
+      overlay.classList.toggle("show");
+      bookDetails.classList.toggle("show");
+      document.querySelector(".fa-times").addEventListener("click", () => {
+        closePopUps();
+      });
+    });
+
     booksPanel.append(book);
   });
 }

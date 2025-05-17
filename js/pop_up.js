@@ -1,12 +1,15 @@
-const closeBtn = document.querySelector(".fa-times");
+import { elements } from "./ui_elements.js";
+const { bookDetails, overlay } = elements;
 
-function closePopUps(...elem) {
-  elem.forEach((item) => {
-    item.addEventListener("click", () => {
-      bookDetails.classList.toggle("show");
-      overlay.classList.toggle("show");
-    });
-  });
+overlay.addEventListener("click", () => {
+  closePopUps();
+});
+
+
+
+function closePopUps() {
+  bookDetails.classList.toggle("show");
+  overlay.classList.toggle("show");
 }
 
-closePopUps(closeBtn, overlay);
+export { closePopUps };
