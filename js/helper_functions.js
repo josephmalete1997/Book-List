@@ -1,6 +1,6 @@
 import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
-import { favoriteBooks } from "./helper_objects.js";
+
 const {
   bookDetails,
   FavoriteBooksList,
@@ -134,30 +134,39 @@ function viewBook(item) {
 }
 
 function populateFavorite() {
-  let refreshStorage = favoriteBooks;
-  if (refreshStorage.length > 0) {
-    refreshStorage = favoriteBooks;
-    FavoriteBooksList.innerHTML = "";
-    refreshStorage.forEach((item) => {
+  const favoriteBooks = JSON.parse(localStorage.getItem("favorite" || []));
+  FavoriteBooksList.innerHTML = "";
+
+  if (favoriteBooks.length > 0) {
+    favoriteBooks.forEach((item, index) => {
       const book = document.createElement("div");
+      book.className = "favorite-book-entry";
+
+      book.innerHTML = `
+        <div class="favorite-book">
+          <div class="favorite-book-cover" style="background-image: url('${item.cover_image}');"></div>
+          <div class="favorite-book-text">
+            <strong><p>${item.title}</p></strong>
+            <p><strong>Author:</strong> ${item.author}</p>
+          </div>
+        </div>
+      `;
+
       const deleteBtn = document.createElement("div");
       deleteBtn.className = "remove-favorite";
       deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> Remove`;
-      book.innerHTML = `<div class="favorite-book">
-      <div class="favorite-book-cover" style="background-image: url(${item.cover_image});"></div>
-      <div class="favorite-book-text">
-      <strong><p>${item.title}</p></strong>
-      <p><strong>Author</strong> ${item.author}</p>
-      </div>
-      </div>`;
-      deleteBtn.addEventListener('click',()=>{
-        //remove
-      })
-      book.append(deleteBtn);
-      FavoriteBooksList.append(book);
+
+      deleteBtn.addEventListener("click", () => {
+        favoriteBooks.splice(index, 1);
+        localStorage.setItem("favorite", JSON.stringify(favoriteBooks));
+        populateFavorite();
+      });
+
+      book.appendChild(deleteBtn);
+      FavoriteBooksList.appendChild(book);
     });
   } else {
-    FavoriteBooksList.innerHTML = "No books found!";
+    FavoriteBooksList.innerHTML = "<p>No books found!</p>";
   }
 }
 
