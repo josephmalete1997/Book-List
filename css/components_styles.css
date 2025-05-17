@@ -133,9 +133,7 @@ p {
 .favorite-book {
   display: flex;
   padding: 5px 10px;
-  background: #eaeaea;
   margin: 10px;
-  border-radius: 10px;
   height: 70px;
   overflow: hidden;
   position: relative;
@@ -173,11 +171,6 @@ p {
   bottom: 5px;
   right: 20px;
 }
-
-.favorite-book-text {
-}
-
-/* scroll-bar */
 
 * {
   scrollbar-width: thin;
