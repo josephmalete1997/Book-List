@@ -22,7 +22,7 @@ function getAllBooks(data) {
     const favBtn = document.createElement("i");
     favBtn.className = "fa-regular fa-heart fav-icon";
     const book = document.createElement("div");
-    book.className = "book pseudo-after";
+    book.className = "book";
     book.id = item.id;
     book.innerHTML = `
             <span class="genre-tag">${item.genre}</span>
@@ -48,7 +48,7 @@ function getBooksByGenre(data, genre) {
       const favBtn = document.createElement("i");
       favBtn.className = "fa-regular fa-heart fav-icon";
       const book = document.createElement("div");
-      book.className = "book pseudo-after";
+      book.className = "book";
       book.id = item.id;
       book.innerHTML = `
             <span class="genre-tag">${item.genre}</span>
