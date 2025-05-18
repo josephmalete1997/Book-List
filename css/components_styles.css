@@ -92,6 +92,7 @@ p {
 }
 .book-details p {
   margin: 5px 0;
+  font-size: 13px;
 }
 
 .book-details.show {
@@ -109,10 +110,43 @@ p {
 }
 
 .viewed-book-cover {
-  width: 90%;
-  height: 100%;
+  width: 75%;
+  height: 80%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90%;
+  background-size: cover;
   border-radius: 5px;
+  margin: 10% auto;
+  box-shadow: 2px 5px 10px rgb(0, 0, 0, 0.8);
+}
+
+
+.viewed-book-cover::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 100%;
+  background: rgb(177, 177, 177);
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  transform: skewY(-50deg);
+  z-index: -1;
+  box-shadow: inset -3px -3px 1px rgb(0, 0, 0, 0.3);
+  border-radius: 0 5px 3px 0;
+}
+
+.viewed-book-cover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: rgb(231, 231, 231);
+  position: absolute;
+  top: -10px;
+  left: 6px;
+  transform: skewX(-50deg);
+  z-index: -1;
+  box-shadow: inset 3px 3px 1px rgb(0, 0, 0, 0.3);
+  border-radius: 10px 5px 0 0;
 }
