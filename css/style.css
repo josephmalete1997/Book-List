@@ -58,9 +58,11 @@ div {
   background: rgb(0, 0, 0);
   border-radius: 5px;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   margin: 0px;
+  overflow: hidden;
+  position: relative;
 }
 
 .header div button:hover {

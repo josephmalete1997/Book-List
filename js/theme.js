@@ -19,9 +19,13 @@ switchBtn.addEventListener("click", () => {
   setTheme(currentTheme);
 });
 
+function changeToDark(arr, theme) {
+  for (let i = 0; i < arr.length; i++)
+    arr[i].classList.toggle("dark-panel", theme);
+}
+
 function setTheme(theme) {
   const isDark = theme === "dark";
-
   document.querySelectorAll(".book-title").forEach((text) => {
     text.classList.toggle("white-color", isDark);
   });
@@ -30,8 +34,8 @@ function setTheme(theme) {
     text.classList.toggle("dark-panel", isDark);
   });
 
-  bookDetails.classList.toggle("dark-panel", isDark);
-  favoritesPanel.classList.toggle("dark-panel", isDark);
+  changeToDark([bookDetails, favoritesPanel], isDark);
+
   sideNav.classList.toggle("white-color", isDark);
   headerHeart.classList.toggle("white-color", isDark);
   favoriteCount.classList.toggle("white-color", isDark);

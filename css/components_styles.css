@@ -34,6 +34,7 @@
   cursor: pointer;
   transition: 0.5s ease-in-out;
   left: 0%;
+  box-shadow: 2px 2 5px rgba(74, 74, 74, 0.7);
 }
 
 .theme-switch .dot:hover {

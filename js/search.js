@@ -35,7 +35,7 @@ searchButton.addEventListener("click", () => {
       if (results.length === 0) {
         booksPanel.innerHTML = "";
         booksPanel.innerHTML = `
-        <div style="margin:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <div class="no-results" style="margin:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;">
         <i style="font-size:140px;"class="fa-brands fa-optin-monster"></i>
         <h3>Oops! No results f <i class="fa-solid fa-search"></i>und for "${searchTerm}"</h3>.
         </div>`;
