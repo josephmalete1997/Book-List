@@ -12,9 +12,9 @@ const {
 
 function showMessage(message) {
   setTimeout(() => {
-  successMessage.classList.toggle("show");
-  successMessage.append(message);
-  },20)
+    successMessage.classList.toggle("show");
+    successMessage.append(message);
+  }, 20);
   setTimeout(() => {
     successMessage.innerHTML = "";
     successMessage.classList.toggle("show");
@@ -163,6 +163,7 @@ function populateFavorite() {
         localStorage.setItem("favorite", JSON.stringify(favoriteBooks));
         populateFavorite();
         showMessage("Removed Successfully!");
+        getFavoriteCount(favoriteBooks);
       });
 
       book.appendChild(deleteBtn);

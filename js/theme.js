@@ -1,5 +1,12 @@
 import { elements } from "./ui_elements.js";
-const { favoritesPanel, headerOverlay, bookDetails,sideNav } = elements;
+const {
+  favoritesPanel,
+  headerOverlay,
+  bookDetails,
+  sideNav,
+  headerHeart,
+  favoriteCount,
+} = elements;
 
 const switchBtn = document.querySelector(".theme-switch .dot");
 const switchBtnIcon = switchBtn.querySelector("i");
@@ -22,6 +29,8 @@ function setTheme(theme) {
   bookDetails.classList.toggle("dark-panel", isDark);
   favoritesPanel.classList.toggle("dark-panel", isDark);
   sideNav.classList.toggle("white-color", isDark);
+  headerHeart.classList.toggle("white-color", isDark);
+  favoriteCount.classList.toggle("white-color", isDark);
 
   if (isDark) {
     document.body.style.background = "rgb(60, 60, 60)";
