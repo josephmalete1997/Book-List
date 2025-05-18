@@ -10,6 +10,7 @@
   z-index: 160;
   transition: 0.5s ease-in-out;
   padding: 2.5vh 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .favorites-panel h1 {

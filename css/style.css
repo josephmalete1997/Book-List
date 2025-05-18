@@ -213,8 +213,8 @@ main {
 .genre-list div {
   cursor: pointer;
   margin: 5px 0px;
-  padding: 5px 10px;
-  border-radius: 30px;
+  padding: 5px 20px;
+  border-radius: 20px;
   transition: 0.3s;
   box-shadow: 1px 2px 5px rgb(0, 0, 0, 0.3);
   width: 80%;
@@ -226,7 +226,7 @@ main {
 }
 
 div.active-genre {
-  background: black;
+  background: rgb(29, 29, 29);
   color: white;
 }
 

@@ -34,7 +34,11 @@ searchButton.addEventListener("click", () => {
 
       if (results.length === 0) {
         booksPanel.innerHTML = "";
-        booksPanel.innerHTML = `<p>No results found for "${searchTerm}".</p>`;
+        booksPanel.innerHTML = `
+        <div style="margin:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <i style="font-size:140px;"class="fa-brands fa-optin-monster"></i>
+        <h1>Oops! No results f <i class="fa-solid fa-search"></i>und for "${searchTerm}"</h1>.
+        </div>`;
         return;
       }
       if (searchTerm != "") {
@@ -66,10 +70,5 @@ searchButton.addEventListener("click", () => {
         </div>
       `;
       }
-    })
-    .catch((error) => {
-      console.error("Fetch error:", error);
-      booksPanel.innerHTML =
-        "<p>Error fetching book data. Please try again.</p>";
     });
 });
