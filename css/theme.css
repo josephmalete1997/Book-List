@@ -1,9 +1,14 @@
 .dark-panel {
   background: rgb(49, 49, 49);
   color: white;
-   background: rgba(115, 115, 115, 0.2);
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
+  background: rgba(115, 115, 115, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark-panel.active-genre {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .header.dark-panel * {
@@ -13,4 +18,3 @@
 .white-color {
   color: rgb(226, 226, 226);
 }
-
