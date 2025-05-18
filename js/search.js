@@ -69,6 +69,10 @@ searchButton.addEventListener("click", () => {
             .join("")}
         </div>
       `;
+        const isDark = localStorage.getItem("theme") === "dark";
+        document.querySelectorAll(".book-card").forEach((text) => {
+          text.classList.toggle("dark-panel", isDark);
+        });
       }
     });
 });
