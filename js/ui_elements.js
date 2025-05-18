@@ -1,6 +1,7 @@
 const elements = {
   header: document.querySelector(".header"),
   headerOverlay: document.querySelector(".header-overlay"),
+  sideNav: document.querySelector(".side-nav"),
   booksPanel: document.querySelector(".books-panel"),
   bookText: document.querySelectorAll(".book-title"),
   genrePanel: document.querySelector(".genre-list"),

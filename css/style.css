@@ -209,11 +209,12 @@ main {
 
 .genre-list div {
   cursor: pointer;
-  margin: 2px 0px;
-  background: #ebebeb;
+  margin: 5px 0px;
   padding: 5px 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   transition: 0.3s;
+  box-shadow: 1px 2px 5px rgb(0, 0, 0, 0.3);
+  width: 80%;
 }
 
 .genre-list div:hover {

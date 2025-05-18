@@ -1,8 +1,9 @@
-
 .favorites-panel {
   height: 95vh;
   width: 370px;
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   right: -400px;
   top: 0px;
@@ -78,7 +79,6 @@
   box-shadow: inset 3px 3px 1px rgb(0, 0, 0, 0.3);
 }
 
-
 .favorite-book-text {
   height: 100%;
   width: 100%;
@@ -99,8 +99,8 @@
 }
 
 .remove-favorite:hover {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 * {
@@ -130,7 +130,7 @@
   color: white;
   padding: 12px 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;

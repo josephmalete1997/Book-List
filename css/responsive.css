@@ -1,0 +1,35 @@
+@media (max-width: 1024px) {
+  .book-card {
+    flex: 1 1 45%;
+  }
+
+  .book-results {
+    gap: 16px;
+  }
+
+  .book {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    flex: 1 1 100%;
+  }
+
+  .book-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .favorite-book,
+  .book-results {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book {
+    width: 30%;
+    background: red;
+  }
+}
