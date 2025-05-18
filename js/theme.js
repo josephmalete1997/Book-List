@@ -36,8 +36,6 @@ function setTheme(theme) {
 
   document.querySelector(".results-title").classList.toggle("white-color", isDark);
 
-  changeToDark([bookDetails, favoritesPanel], isDark);
-
   sideNav.classList.toggle("white-color", isDark);
   headerHeart.classList.toggle("white-color", isDark);
   favoriteCount.classList.toggle("white-color", isDark);
