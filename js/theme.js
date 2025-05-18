@@ -26,6 +26,10 @@ function setTheme(theme) {
     text.classList.toggle("white-color", isDark);
   });
 
+  document.querySelectorAll(".book-card").forEach((text) => {
+    text.classList.toggle("dark-panel", isDark);
+  });
+
   bookDetails.classList.toggle("dark-panel", isDark);
   favoritesPanel.classList.toggle("dark-panel", isDark);
   sideNav.classList.toggle("white-color", isDark);
