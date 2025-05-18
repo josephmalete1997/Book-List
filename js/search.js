@@ -58,7 +58,7 @@ searchButton.addEventListener("click", () => {
               <h3>${book.title}</h3>
               <p><strong>Author:</strong> ${book.author}</p>
               <p><strong>Rating:</strong> ${book.rating}</p>
-              <p>${
+              <p style="font-size:12px;">${
                 book.description.split(" ").length > 10
                   ? book.description.split(" ").slice(0, 20).join(" ")
                   : book.description
