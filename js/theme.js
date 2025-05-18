@@ -34,6 +34,8 @@ function setTheme(theme) {
     text.classList.toggle("dark-panel", isDark);
   });
 
+  document.querySelector(".results-title").classList.toggle("white-color", isDark);
+
   changeToDark([bookDetails, favoritesPanel], isDark);
 
   sideNav.classList.toggle("white-color", isDark);
