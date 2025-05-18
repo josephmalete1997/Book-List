@@ -116,7 +116,7 @@ function viewBook(item) {
         <div class="viewed-book-cover" style="background-image:url(${item.cover_image})"></div>
     </div>
     <div class='right'>
-        <h1>Title:${item.title}</h1>
+        <h2>Title:${item.title}</h2>
         <h3>Author </h3>
         <p>${item.author}</p>
         <h3>Genre </h3>
