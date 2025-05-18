@@ -43,7 +43,7 @@ searchButton.addEventListener("click", () => {
       }
       if (searchTerm != "") {
         booksPanel.innerHTML = `
-        <h2 style="margin-left:50px;">Results for "${searchTerm}":</h2>
+        <h2 style="margin-left:50px;" class="results-title">Results for "${searchTerm}":</h2>
         <div class="book-results">
           ${results
             .map(
