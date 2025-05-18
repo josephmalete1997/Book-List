@@ -90,9 +90,14 @@
 p {
   margin: 0;
 }
+
 .book-details p {
   margin: 5px 0;
   font-size: 13px;
+}
+
+.book-details h3 {
+  margin-top: 10px;
 }
 
 .book-details.show {
