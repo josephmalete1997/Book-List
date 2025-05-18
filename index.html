@@ -40,12 +40,19 @@
           <div class="circle"></div>
           <div class="dot"><i class="fa-solid fa-moon"></i></div>
         </div>
-        <i class="fa-solid fa-heart"></i> <span style="margin-left: 5px;" class="favorite-count"></span>
+        <i class="fa-solid fa-heart"></i>
+        <span style="margin-left: 5px" class="favorite-count"></span>
       </div>
     </div>
     <main>
       <div class="side-nav">
-        <h4>Filter by genre<i class="fa-solid fa-filter"></i></h4>
+        <h4 style="display: flex; align-items: center">
+          Filter by genre
+          <i
+            class="fa-solid fa-filter"
+            style="margin-left: 50px;"
+          ></i>
+        </h4>
         <div class="genre-list"></div>
       </div>
       <div class="books-panel"></div>
@@ -55,13 +62,11 @@
     <div class="favorites-panel">
       <i class="fa-solid fa-times close-favorite"></i>
       <h2>Favorite Books</h2>
-      <div class="favorite-books">
-      </div>
+      <div class="favorite-books"></div>
     </div>
 
-    <div class="message-pop-up"> 
-    </div>
-    
+    <div class="message-pop-up"></div>
+
     <script type="module" src="js/theme.js"></script>
     <script type="module" src="js/pop_up.js"></script>
     <script type="module" src="js/helper_objects.js"></script>
