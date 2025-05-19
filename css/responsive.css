@@ -12,6 +12,25 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .book-card {
+    flex: 1 1 45%;
+  }
+
+  .book-results {
+    gap: 16px;
+  }
+
+  .book {
+    width: 22%;
+    margin: 1%;
+    height: 420px;
+  }
+  .book-cover {
+    height: 370px;
+  }
+}
+
 @media (max-width: 768px) {
   .book-card {
     flex: 1 1 100%;
@@ -29,7 +48,6 @@
   }
 
   .book {
-    width: 30%;
-    background: red;
+    width: 90%;
   }
 }
