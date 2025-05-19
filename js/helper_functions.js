@@ -77,7 +77,6 @@ function setFavorite(elem, book) {
 
   if (index !== -1) {
     elem.classList.add("fa-solid");
-    elem.classList.remove("fa-regular");
   } else {
     elem.classList.add("fa-regular");
     elem.classList.remove("fa-solid");
@@ -91,8 +90,6 @@ function setFavorite(elem, book) {
       setTimeout(() => {
         showMessage("Removed successfully");
         favorites.splice(index, 1);
-        elem.classList.remove("fa-solid");
-        elem.classList.add("fa-regular");
         localStorage.setItem("favorite", JSON.stringify(favorites));
         getFavoriteCount(favorites);
       }, 1000);
@@ -100,8 +97,6 @@ function setFavorite(elem, book) {
       setTimeout(() => {
         showMessage("Added successfully");
         favorites.push(book);
-        elem.classList.remove("fa-regular");
-        elem.classList.add("fa-solid");
         localStorage.setItem("favorite", JSON.stringify(favorites));
         getFavoriteCount(favorites);
       }, 1000);

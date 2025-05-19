@@ -13,10 +13,6 @@
 }
 
 @media (min-width: 1920px) {
-  .book-card {
-    flex: 1 1 45%;
-  }
-
   .book-results {
     gap: 16px;
   }

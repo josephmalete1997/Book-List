@@ -2,6 +2,7 @@ const elements = {
   header: document.querySelector(".header"),
   headerOverlay: document.querySelector(".header-overlay"),
   headerHeart: document.querySelector(".header .fa-heart "),
+  headerH2: document.querySelector(".header h2"),
   sideNav: document.querySelector(".side-nav"),
   booksPanel: document.querySelector(".books-panel"),
   bookText: document.querySelectorAll(".book-title"),
@@ -16,7 +17,8 @@ const elements = {
   successMessage: document.querySelector(".message-pop-up"),
   favoriteCount: document.querySelector(".favorite-count"),
   searchInput: document.querySelector(".search input"),
-  searchButton: document.querySelector(".search button")
+  searchButton: document.querySelector(".search button"),
+  switchBtn: document.querySelector(".theme-switch .dot"),
 };
 
 export { elements };

@@ -2,13 +2,14 @@ import { elements } from "./ui_elements.js";
 const {
   favoritesPanel,
   headerOverlay,
-  bookDetails,
   sideNav,
   headerHeart,
   favoriteCount,
+  headerH2,
+  switchBtn
 } = elements;
 
-const switchBtn = document.querySelector(".theme-switch .dot");
+
 const switchBtnIcon = switchBtn.querySelector("i");
 applyStoredTheme();
 
@@ -18,6 +19,11 @@ switchBtn.addEventListener("click", () => {
     : "light";
   setTheme(currentTheme);
 });
+
+function changeToWhiteText(arr, theme) {
+  for (let i = 0; i < arr.length; i++)
+    arr[i].classList.toggle("white-color", theme);
+}
 
 function changeToDark(arr, theme) {
   for (let i = 0; i < arr.length; i++)
@@ -34,18 +40,13 @@ function setTheme(theme) {
     text.classList.toggle("dark-panel", isDark);
   });
 
-  sideNav.classList.toggle("white-color", isDark);
-  headerHeart.classList.toggle("white-color", isDark);
-  favoriteCount.classList.toggle("white-color", isDark);
+  changeToWhiteText([sideNav, headerHeart, favoriteCount,headerH2], isDark);
+  changeToDark([favoritesPanel,headerOverlay], isDark);
 
   if (isDark) {
     document.body.style.background = "rgb(60, 60, 60)";
-    headerOverlay.classList.add("dark-panel");
-    document.querySelector(".header h2").classList.add("white-color");
   } else {
     document.body.style.background = "#f4f4f4";
-    headerOverlay.classList.remove("dark-panel");
-    document.querySelector(".header h2").classList.remove("white-color");
   }
 
   switchBtn.classList.toggle("move", isDark);
