@@ -170,6 +170,10 @@ main {
   background: rgb(226, 226, 226);
 }
 
+.fav-icon.dark-panel:hover{
+  background: rgb(235, 86, 86);
+}
+
 .fav-icon.scale {
   padding: 8px;
   margin: 0;

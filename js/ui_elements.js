@@ -20,6 +20,7 @@ const elements = {
   searchInput: document.querySelector(".search input"),
   searchButton: document.querySelector(".search button"),
   switchBtn: document.querySelector(".theme-switch .dot"),
+  switchBtnPath: document.querySelector(".theme-switch .circle"),
 };
 
 export { elements };

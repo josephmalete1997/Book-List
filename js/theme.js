@@ -1,13 +1,20 @@
 import { elements } from "./ui_elements.js";
-const { favoritesPanel, headerOverlay, sideNav, headerHeart, favoriteCount, headerH2, switchBtn } = elements;
+const { favoritesPanel, headerOverlay, sideNav, headerHeart, favoriteCount, headerH2, switchBtn, switchBtnPath } =
+  elements;
 
 const switchBtnIcon = switchBtn.querySelector("i");
 applyStoredTheme();
 
-switchBtn.addEventListener("click", () => {
-  const currentTheme = switchBtnIcon.classList.contains("fa-moon") ? "dark" : "light";
-  setTheme(currentTheme);
-});
+function clickToChangeTheme(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].addEventListener("click", () => {
+      const currentTheme = switchBtnIcon.classList.contains("fa-moon") ? "dark" : "light";
+      setTheme(currentTheme);
+    });
+  }
+}
+
+clickToChangeTheme([switchBtn, switchBtnPath]);
 
 function changeToWhiteText(arr, theme) {
   for (let i = 0; i < arr.length; i++) arr[i].classList.toggle("white-color", theme);
