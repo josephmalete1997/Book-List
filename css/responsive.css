@@ -48,6 +48,10 @@
   }
 
   .book {
+<<<<<<< HEAD
     width: 90%;
+=======
+    width: 30%;
+>>>>>>> 4cf6f23727ac1e6aef4fc92d931c6c007c5c06c6
   }
 }
