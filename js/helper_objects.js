@@ -14,5 +14,4 @@ const genreList = [
   "Science Fiction",
 ];
 
-
-export { genreList};
+export { genreList };

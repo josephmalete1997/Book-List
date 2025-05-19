@@ -1,13 +1,7 @@
 import { elements } from "./ui_elements.js";
 import { populateFavorite } from "./helper_functions.js";
 
-const {
-  bookDetails,
-  overlay,
-  openFavoritesPanel,
-  favoritesPanel,
-  closeFavoritesPanel,
-} = elements;
+const { bookDetails, overlay, openFavoritesPanel, favoritesPanel, closeFavoritesPanel } = elements;
 
 closeFavoritesPanel.addEventListener("click", () => {
   favoritesPanel.classList.toggle("open-panel");

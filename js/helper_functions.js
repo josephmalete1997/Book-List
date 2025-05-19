@@ -1,14 +1,8 @@
 import { closePopUps } from "./pop_up.js";
 import { elements } from "./ui_elements.js";
+import { changeToWhiteText, changeMultipleToDark } from "./theme.js";
 
-const {
-  bookDetails,
-  FavoriteBooksList,
-  successMessage,
-  favoriteCount,
-  overlay,
-  booksPanel,
-} = elements;
+const { bookDetails, FavoriteBooksList, successMessage, favoriteCount, overlay, booksPanel } = elements;
 
 function showMessage(message) {
   setTimeout(() => {
@@ -34,11 +28,11 @@ function createBooks(item) {
   const bookTitle = document.createElement("h3");
   bookTitle.className = "book-title";
   const isDark = localStorage.getItem("theme") === "dark";
-  bookTitle.classList.toggle("white-color", isDark);
+  
+  changeToWhiteText([bookTitle], isDark);
+  changeMultipleToDark([document.querySelectorAll(".genre-tag")], isDark);
 
-  bookTitle.innerHTML =
-    item.title.length > 20 ? item.title.slice(0, 20) + "..." : item.title;
-
+  bookTitle.innerHTML = item.title.length > 20 ? item.title.slice(0, 20) + "..." : item.title;
   bookCover.className = "book-cover image";
   bookCover.style.backgroundImage = `url(${item.cover_image})`;
   bookCover.innerHTML = ` <span class="book-tool-tip"><i class="fa-solid fa-circle-info"></i> View details</span>`;

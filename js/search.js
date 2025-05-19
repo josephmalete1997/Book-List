@@ -1,4 +1,5 @@
 import { elements } from "./ui_elements.js";
+import { changeMultipleToDark } from "./theme.js";
 const { searchInput, searchButton, booksPanel } = elements;
 
 function searchRegexFunction(likePattern) {
@@ -14,12 +15,7 @@ function searchRegexFunction(likePattern) {
 
 function bookMatches(book, pattern) {
   const regex = searchRegexFunction(`%${pattern}%`);
-  return (
-    regex.test(book.title) ||
-    regex.test(book.author) ||
-    regex.test(book.genre) ||
-    regex.test(book.description)
-  );
+  return regex.test(book.title) || regex.test(book.author) || regex.test(book.genre) || regex.test(book.description);
 }
 
 searchButton.addEventListener("click", () => {
@@ -28,9 +24,7 @@ searchButton.addEventListener("click", () => {
   fetch("./js/books.json")
     .then((response) => response.json())
     .then((data) => {
-      const results = data.data.books.filter((book) =>
-        bookMatches(book, searchTerm)
-      );
+      const results = data.data.books.filter((book) => bookMatches(book, searchTerm));
 
       if (results.length === 0) {
         booksPanel.innerHTML = "";
@@ -49,9 +43,7 @@ searchButton.addEventListener("click", () => {
             .map(
               (book) => `
             <div class="book-card">
-              <div class="book-card-image image" style="background-image:url(${
-                book.cover_image
-              })">
+              <div class="book-card-image image" style="background-image:url(${book.cover_image})">
               <span class="search-genre-tag">${book.genre}</span>
               
               </div>
@@ -70,9 +62,7 @@ searchButton.addEventListener("click", () => {
         </div>
       `;
         const isDark = localStorage.getItem("theme") === "dark";
-        document.querySelectorAll(".book-card").forEach((text) => {
-          text.classList.toggle("dark-panel", isDark);
-        });
+        changeMultipleToDark([document.querySelectorAll(".book-card")], isDark);
       }
     });
 });

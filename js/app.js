@@ -1,7 +1,7 @@
 import { elements } from "./ui_elements.js";
 import { createBooks } from "./helper_functions.js";
 import { genreList } from "./helper_objects.js";
-const { booksPanel, genrePanel, bookText } = elements;
+const { booksPanel, genrePanel } = elements;
 
 function getAllBooks(data) {
   data["data"]["books"].forEach((item) => {

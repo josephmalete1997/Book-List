@@ -6,6 +6,7 @@ const elements = {
   sideNav: document.querySelector(".side-nav"),
   booksPanel: document.querySelector(".books-panel"),
   bookText: document.querySelectorAll(".book-title"),
+  genreTag: document.querySelectorAll(".genre-tag"),
   genrePanel: document.querySelector(".genre-list"),
   overlay: document.querySelector(".overlay"),
   bookDetails: document.querySelector(".book-details"),

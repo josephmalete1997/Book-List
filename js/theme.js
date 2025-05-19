@@ -1,33 +1,27 @@
 import { elements } from "./ui_elements.js";
-const {
-  favoritesPanel,
-  headerOverlay,
-  sideNav,
-  headerHeart,
-  favoriteCount,
-  headerH2,
-  switchBtn
-} = elements;
-
+const { favoritesPanel, headerOverlay, sideNav, headerHeart, favoriteCount, headerH2, switchBtn } = elements;
 
 const switchBtnIcon = switchBtn.querySelector("i");
 applyStoredTheme();
 
 switchBtn.addEventListener("click", () => {
-  const currentTheme = switchBtnIcon.classList.contains("fa-moon")
-    ? "dark"
-    : "light";
+  const currentTheme = switchBtnIcon.classList.contains("fa-moon") ? "dark" : "light";
   setTheme(currentTheme);
 });
 
 function changeToWhiteText(arr, theme) {
-  for (let i = 0; i < arr.length; i++)
-    arr[i].classList.toggle("white-color", theme);
+  for (let i = 0; i < arr.length; i++) arr[i].classList.toggle("white-color", theme);
 }
 
 function changeToDark(arr, theme) {
+  for (let i = 0; i < arr.length; i++) arr[i].classList.toggle("dark-panel", theme);
+}
+
+function changeMultipleToDark(arr, theme) {
   for (let i = 0; i < arr.length; i++)
-    arr[i].classList.toggle("dark-panel", theme);
+    arr[i].forEach((text) => {
+      text.classList.toggle("dark-panel", theme);
+    });
 }
 
 function setTheme(theme) {
@@ -36,12 +30,9 @@ function setTheme(theme) {
     text.classList.toggle("white-color", isDark);
   });
 
-  document.querySelectorAll(".book-card").forEach((text) => {
-    text.classList.toggle("dark-panel", isDark);
-  });
-
-  changeToWhiteText([sideNav, headerHeart, favoriteCount,headerH2], isDark);
-  changeToDark([favoritesPanel,headerOverlay], isDark);
+  changeMultipleToDark([document.querySelectorAll(".genre-tag")], isDark);
+  changeToDark([favoritesPanel, headerOverlay], isDark);
+  changeToWhiteText([sideNav, headerHeart, favoriteCount, headerH2], isDark);
 
   if (isDark) {
     document.body.style.background = "rgb(60, 60, 60)";
@@ -60,3 +51,5 @@ function applyStoredTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
 }
+
+export { changeToWhiteText, changeToDark, changeMultipleToDark };
